@@ -36,6 +36,8 @@ jobs:
         run: |-
           terraform plan -destroy \
           -var="region=us-east-1" \
+          -var="public_key=$PUBLIC_SSH_KEY" \
+          -var="private_key=$PRIVATE_SSH_KEY" \
           -var="key_name=deployer-key" \
           -out=PLAN
         working-directory: ./terraform
@@ -89,4 +91,4 @@ jobs:
             sudo docker rm myappcontainer || true
             sudo docker pull $REGISTRY/$REPOSITORY:$IMAGE_TAG
             sudo docker run -d --name myappcontainer -p 80:8080 $REGISTRY/$REPOSITORY:$IMAGE_TAG
-
+            
