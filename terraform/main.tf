@@ -8,6 +8,7 @@ terraform {
   backend "s3" {
     key = "aws/ec2-deploy/terraform.tfstate"
     profile = "default"
+    region = "us-east-1"
   }
 }
 
