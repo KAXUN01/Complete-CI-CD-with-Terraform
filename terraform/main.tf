@@ -7,14 +7,12 @@ terraform {
   }
   backend "s3" {
     key = "aws/ec2-deploy/terraform.tfstate"
-    profile = "default"
     region = "us-east-1"
   }
 }
 
 provider "aws" {
   region = var.region
-  profile = "default"
 }
 resource "aws_instance" "servernode" {
   ami                    = "ami-0e2c8caa4b6378d8c"
