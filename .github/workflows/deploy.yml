@@ -28,7 +28,7 @@ jobs:
         with:
           terraform_wrapper: false
       - name: remove .terraform
-        run: rm -rf .terraform
+        run: rm .terraform
       - name: Terraform init
         id: init
         run: terraform init -reconfigure -backend-config="bucket=$TF_STATE_BUCKET_NAME" -backend-config="region=us-east-1"
