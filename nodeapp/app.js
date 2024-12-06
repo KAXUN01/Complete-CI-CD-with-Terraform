@@ -6,5 +6,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(8080, () => {
-  console.log("Server is up and running");
+  console.log("Server is up and running.");
 });
